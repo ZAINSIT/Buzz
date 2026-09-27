@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  db:
+    image: postgis/postgis:15-3.3
+    environment:
+      POSTGRES_USER: buzz
+      POSTGRES_PASSWORD: localpassword
+      POSTGRES_DB: buzz_dev
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
